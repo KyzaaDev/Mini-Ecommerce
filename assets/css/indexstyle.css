@@ -1,0 +1,119 @@
+/* TAG STYLE */
+body {
+    background-color: 	#f3e8ff; /* tetap putih bersih */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #6b21a8; /* ungu primer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+header a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* ungu transparan */
+}
+
+header h1 {
+    color: white;
+    font-weight: bold;
+}
+
+button {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 3px;
+    background-color: #6b21a8; /* ungu primer */
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4c1d95; /* ungu lebih gelap pas hover */
+}
+
+footer {
+    background-color: #1f2937; /* abu gelap */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 45px;
+    color: #4c1d95; /* ungu gelap */
+}
+
+/* CONTAINER */
+
+.container {
+    width: 95%;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+
+/* CARD KATALOG */
+
+.card-katalog {
+    padding: 10px;
+    background-color: #ede9fe; 
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    transition: width 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+}
+
+.card-katalog h3 {
+    margin: 5px auto;
+}
+
+.card-katalog p:last-of-type {
+    color: #f97316;
+    margin-top: -10px;
+}
+
+.card-katalog img {
+    border-radius: 8px;
+}
+
+.card-katalog:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* PRODUK */
+
+.produk {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
