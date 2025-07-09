@@ -1,10 +1,10 @@
 <?php 
-require(__DIR__ . "config/db.php");
+require(__DIR__ . "/../config/db.php");
 
 if (isset($_POST["login"])) {
 
-    $username = $_POST["user"];
-    $password = $_POST["pass"];
+    $username = mysqli_real_escape_string($conn, $_POST["user"]);
+    $password = mysqli_real_escape_string($conn, $_POST["pass"]);
     
     $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");
     

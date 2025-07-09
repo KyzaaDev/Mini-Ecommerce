@@ -1,11 +1,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ede9fe;
+    display: flex;
+    justify-content: center;
 }
 .login {
-    margin: 150px auto;
+    margin-top: 130px;
     background-color: #ffff;
-    width: 300px;
+    width: 400px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -16,7 +18,7 @@ body {
 }
 .login input {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #6b21a8 ;
     border-radius: 7px;
     padding: 8px;
@@ -24,7 +26,7 @@ body {
 }
 .login button {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 8px;
     border: none;
     border-radius: 7px;
     padding: 10px;
@@ -41,9 +43,9 @@ body {
     margin-bottom: 30px;
 }
 .login p {
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
+    font-size: 15px;
 }
 .login a {
     text-decoration: none;

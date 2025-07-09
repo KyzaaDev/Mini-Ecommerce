@@ -14,13 +14,13 @@
                 <p style="color: red; text-align:center;">Maaf password atau username salah</p>
             <?php endif; ?>
 
-            <label for="username">Username: </label>
-            <input type="text" name="user" id="username" required>
-            <label for="password">Password: </label>
-            <input type="password" name="pass" id="password" required>
-            <p>Tidak punya akun? <a href="register.php">Daftar disini</a></p>
+            <label for="username">Username </label>
+            <input type="text" name="user" id="username" required placeholder="Username">
+            <label for="password">Password </label>
+            <input type="password" name="pass" id="password" required placeholder="Password">
             <button type="submit" name="login">Login</button>
         </form>
+        <p>Tidak punya akun? <a href="register.php">Daftar disini</a></p>
     </div>
 </body>
 </html>

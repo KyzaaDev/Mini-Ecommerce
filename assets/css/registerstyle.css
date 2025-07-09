@@ -1,0 +1,83 @@
+body {
+    /* margin: 0; */
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ede9fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-card {
+    margin-top: 50px;
+    background-color: #ffff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.register-card label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.register-card h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.register-card input {
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #6b21a8;
+    border-radius: 8px;
+}
+
+.register-card button {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #6b21a8;
+    color: white;
+}
+
+.register-card p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-wrapper label {
+    font-size: 14px;
+    margin: 0;
+}
+.register-card p {
+    font-size: 15px;
+}
+
+.register-card a {
+    text-decoration: none;
+}
+
+.register-card button:hover {
+    background-color: #4c1d95 ;
+}

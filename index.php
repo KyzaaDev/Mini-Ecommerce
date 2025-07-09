@@ -10,7 +10,7 @@
     <?php include("./includes/header.php")?>
 
     <!-- main -->
-    <h2>Our Popular Product</h2>
+    <h2>Our Popular Products</h2>
     <div class="container">
         <div class="produk">
 
@@ -19,10 +19,10 @@
 
         <?php foreach ($daftarProduk as $product) :?>
             <div class="card-katalog">
-                <img src="https://placehold.co/200x150" alt="">
-                <h3><?= $product["nama_product"]?></h3>
+                <img src='./assets/images/<?= $product["pic"]?>' alt="">
+                <h3><?= htmlspecialchars($product["nama_product"]);?></h3>
                 <p>Stok: <?= $product["stok"];?></p>
-                <p>Harga: RP <?= $product["harga"];?></p>
+                <p>Harga: RP <?= number_format($product["harga"], 0, ",", ".");?></p>
                 <button type="submit">Tambah ke keranjang</button>
             </div>
             <br>
