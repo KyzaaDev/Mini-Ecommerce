@@ -1,16 +1,20 @@
 <?php 
-$users = ["username" => "atmin", "passwd" => "atmin123"];
+require(__DIR__ . "config/db.php");
 
-$username = $_POST["user"];
-$password = $_POST["pass"];
+if (isset($_POST["login"])) {
 
-if ( $username == $users["username"] && $password == $users["passwd"]) {
-    echo "<script>alert('Berhasil login')</script>";
-    header("Location: " . "../pages/dashboard.php");
-}else {
-    header("Location: " . "login.php?error=1");
+    $username = $_POST["user"];
+    $password = $_POST["pass"];
+    
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+    
+    if (mysqli_num_rows($result) > 0) {
+        echo "login berhasil";
+        header("Location: ../pages/dashboard.php");
+    
+    } else {
+        header("Location: " . "../pages/login.php?error=1");
+    }
 }
-
-
 
 ?>

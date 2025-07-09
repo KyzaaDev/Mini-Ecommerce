@@ -13,16 +13,20 @@
     <h2>Our Popular Product</h2>
     <div class="container">
         <div class="produk">
-        <?php for ($i = 0; $i < 7; $i++) :?>
+
+        <?php require("./controllers/produk.php");
+        $daftarProduk = produkList(); ?>
+
+        <?php foreach ($daftarProduk as $product) :?>
             <div class="card-katalog">
                 <img src="https://placehold.co/200x150" alt="">
-                <h3>RTX 3050</h3>
-                <p>Stok: 50</p>
-                <p>Harga: RP 5.500.000</p>
+                <h3><?= $product["nama_product"]?></h3>
+                <p>Stok: <?= $product["stok"];?></p>
+                <p>Harga: RP <?= $product["harga"];?></p>
                 <button type="submit">Tambah ke keranjang</button>
             </div>
             <br>
-        <?php endfor;?>
+        <?php endforeach;?>
         </div>
     </div>
 
