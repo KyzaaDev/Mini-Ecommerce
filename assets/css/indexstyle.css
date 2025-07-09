@@ -1,6 +1,6 @@
 /* TAG STYLE */
 body {
-    background-color: 	#f3e8ff; /* tetap putih bersih */
+    background-color: 	#ffff; /* tetap putih bersih */
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -81,6 +81,8 @@ h2 {
     width: 95%;
     padding: 10px;
     margin: 30px auto;
+    background-color: #f9fafb;
+    border-radius: 12px;
 }
 
 
@@ -88,7 +90,7 @@ h2 {
 
 .card-katalog {
     padding: 10px;
-    background-color: #ede9fe; 
+    background-color: #ffff; 
     border-radius: 10px;
     width: 200px;
     height: 320px;

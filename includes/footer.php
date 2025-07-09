@@ -1,1 +1,1 @@
-<footer><p>&copy; <?= date('Y');?> KyzaaDev's team. All rights reserved.</p></footer>
+<footer><p>&copy; <?= date('Y');?> KyzaaDev. All rights reserved.</p></footer>
