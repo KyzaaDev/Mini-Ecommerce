@@ -19,13 +19,15 @@
 
         <?php foreach ($daftarProduk as $product) :?>
             <div class="card-katalog">
-                <img src='./assets/images/<?= $product["pic"]?>' alt="">
-                <h3><?= htmlspecialchars($product["nama_product"]);?></h3>
-                <p>Stok: <?= $product["stok"];?></p>
-                <p>Harga: RP <?= number_format($product["harga"], 0, ",", ".");?></p>
-                <button type="submit">Tambah ke keranjang</button>
-            </div>
-            <br>
+                <a href="#">
+                    <img src='./assets/images/<?= $product["pic"]?>' alt="">
+                    <h3><?= htmlspecialchars($product["nama_product"]);?></h3>
+                </a>
+                    <p>Stok: <?= $product["stok"];?></p>
+                    <p>Harga: RP <?= number_format($product["harga"], 0, ",", ".");?></p>
+                    <button type="submit">Tambah ke keranjang</button>
+                </div>
+                <br>
         <?php endforeach;?>
         </div>
     </div>
