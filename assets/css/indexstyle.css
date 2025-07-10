@@ -139,3 +139,13 @@ h2 {
     gap: 15px;
     flex-wrap: wrap;
 }
+
+.produk a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.produk a:hover {
+    color: #6b21a8;
+}
