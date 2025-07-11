@@ -15,5 +15,14 @@ function produkList() {
     return $rows;
 }
 
+function getData($id) {
+    global $conn;
+    $query = "SELECT * FROM product WHERE id = $id";
+    
+    $result = mysqli_query($conn, $query);
+    
+    $detail = mysqli_fetch_assoc($result);
+    return $detail;
+}
 
 ?>

@@ -19,7 +19,7 @@
 
         <?php foreach ($daftarProduk as $product) :?>
             <div class="card-katalog">
-                <a href="#">
+                <a href="./pages/detail.php?id=<?= $product["id"]?>">
                     <img src='./assets/images/<?= $product["pic"]?>' alt="">
                     <h3><?= htmlspecialchars($product["nama_product"]);?></h3>
                 </a>
