@@ -11,7 +11,7 @@ if (isset($_POST["login"])) {
     if (mysqli_num_rows($result) > 0) {
         echo "login berhasil";
         header("Location: ../pages/dashboard.php");
-    
+        exit();
     } else {
         header("Location: " . "../pages/login.php?error=1");
     }
