@@ -9,7 +9,7 @@
 <body>
     <div class="register-card">
         <h1>Register</h1>
-        <form action="" method="post">
+        <form action="../controllers/auth.php" method="post">
             <label for="nama">Nama lengkap </label>
             <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
     
@@ -28,7 +28,7 @@
             </div>
 
     
-            <button type="submit">Register</button>
+            <button type="submit" name="regis">Register</button>
         </form>
         <p>Sudah punya akun?, <a href="./login.php">login disini</a></p>
 
