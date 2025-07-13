@@ -1,5 +1,5 @@
 <?php
-require(__DIR__ . "/../config/db.php");
+require(__DIR__ . "/../../config/db.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $query = "INSERT INTO users VALUES (NULL, '$nama', '$email', '$username', '$password')";
     
         if (mysqli_query($conn, $query)){
-            header("Location: ../pages/login.php?register_success=success");
+            header("Location: ../../pages/login.php?register_success=success");
             exit();
         }  
     }

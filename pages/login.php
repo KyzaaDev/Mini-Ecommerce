@@ -9,7 +9,7 @@
 <body>
     <div class="login">
         <h1>Login</h1>
-        <form action="../controllers/auth.php" method="post">
+        <form action="../controllers/auth/auth_login.php" method="post">
             <?php if(isset($_GET["error"]) && $_GET["error"] == "wrong") :?>
                 <p style="color: red; text-align:center;">Maaf password atau username salah</p>
             <?php elseif (isset($_GET["register_success"]) && $_GET["register_success"] == "success") :?>

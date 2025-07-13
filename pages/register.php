@@ -9,7 +9,7 @@
 <body>
     <div class="register-card">
         <h1>Register</h1>
-        <form action="../controllers/regis.php" method="post">
+        <form action="../controllers/auth/auth_register.php" method="post">
             <label for="nama">Nama lengkap </label>
             <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
     
