@@ -10,8 +10,12 @@
     <div class="login">
         <h1>Login</h1>
         <form action="../controllers/auth.php" method="post">
-            <?php if(isset($_GET["error"])) :?>
+            <?php if(isset($_GET["error"]) && $_GET["error"] == "wrong") :?>
                 <p style="color: red; text-align:center;">Maaf password atau username salah</p>
+            <?php elseif (isset($_GET["register_success"]) && $_GET["register_success"] == "success") :?>
+                <p style="color: green; text-align:center;">Berhasil register! silahkan login</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] == "not_found") :?>
+                <p style="color: red; text-align:center;">Akun tidak ditemukan, silahkan daftar terlebih dahulu</p>
             <?php endif; ?>
 
             <label for="username">Username </label>

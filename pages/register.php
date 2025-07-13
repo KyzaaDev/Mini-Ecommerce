@@ -9,12 +9,12 @@
 <body>
     <div class="register-card">
         <h1>Register</h1>
-        <form action="../controllers/auth.php" method="post">
+        <form action="../controllers/regis.php" method="post">
             <label for="nama">Nama lengkap </label>
             <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
     
             <label for="email">Email </label>
-            <input type="text" name="email" id="email" placeholder="example@gmail.com">
+            <input type="text" name="email" id="email" placeholder="example@gmail.com" required>
     
             <label for="username">Username </label>
             <input type="text" name="username" id="username" required placeholder="Username">
