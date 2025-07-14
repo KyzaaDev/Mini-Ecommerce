@@ -10,6 +10,9 @@
     <div class="register-card">
         <h1>Register</h1>
         <form action="../controllers/auth/auth_register.php" method="post">
+            <?php if ($_GET["error"]) :?>
+                <p style="color: red; text-align:center;"> Maaf username sudah terpakai</p>
+            <?php endif?>
             <label for="nama">Nama lengkap </label>
             <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
     
