@@ -10,9 +10,17 @@
     <div class="register-card">
         <h1>Register</h1>
         <form action="../controllers/auth/auth_register.php" method="post">
-            <?php if ($_GET["error"]) :?>
-                <p style="color: red; text-align:center;"> Maaf username sudah terpakai</p>
+            <?php if (isset($_GET["error"]) && $_GET["error"] === "username_exist")  :?>
+                <p style="color: red; text-align:center;"> Username sudah terpakai</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "invalid")  :?>
+                <p style="color: red; text-align:center;"> Pastikan email yang diinputkan valid</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "insert_failed")  :?>
+                <p style="color: red; text-align:center;">Gagal membuat akun</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "already_used")  :?>
+                <p style="color: red; text-align:center;">Email sudah terdaftar</p>
             <?php endif?>
+
+
             <label for="nama">Nama lengkap </label>
             <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
     
