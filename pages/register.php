@@ -18,6 +18,8 @@
                 <p style="color: red; text-align:center;">Gagal membuat akun</p>
             <?php elseif (isset($_GET["error"]) && $_GET["error"] === "already_used")  :?>
                 <p style="color: red; text-align:center;">Email sudah terdaftar</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "terlalu_pendek")  :?>
+                <p style="color: red; text-align:center;">Password yang dibuat minimal 8 character</p>
             <?php endif?>
 
 

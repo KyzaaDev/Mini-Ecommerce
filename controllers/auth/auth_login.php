@@ -19,6 +19,7 @@ if (isset($_POST["login"])) {
         }
     } else {
         header("Location: ../../pages/login.php?error=not_found");
+        exit();
     }
 }   
 

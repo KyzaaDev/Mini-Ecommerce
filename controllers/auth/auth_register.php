@@ -7,8 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $nama = mysqli_real_escape_string($conn, $_POST["nama"]);
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
         $username = mysqli_real_escape_string($conn, $_POST["username"]);
-        $password = password_hash(mysqli_real_escape_string($conn, $_POST["pass"]), PASSWORD_DEFAULT);
-    
+        $password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+        
+
+        // check panjang password users
+        if (strlen($_POST["pass"]) < 8) {
+            header("Location: ../../pages/register.php?error=terlalu_pendek");
+            exit();
+        }
         
         // check input user email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
