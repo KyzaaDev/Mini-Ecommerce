@@ -20,6 +20,8 @@
                 <p style="color: red; text-align:center;">Email sudah terdaftar</p>
             <?php elseif (isset($_GET["error"]) && $_GET["error"] === "terlalu_pendek")  :?>
                 <p style="color: red; text-align:center;">Password yang dibuat minimal 8 character</p>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "password_tidak_cocok")  :?>
+                <p style="color: red; text-align:center;">Password yang anda masukkan tidak cocok</p>
             <?php endif?>
 
 
@@ -34,6 +36,9 @@
     
             <label for="pass">Password </label>
             <input type="password" name="pass" id="pass" required placeholder="Password">
+            
+            <label for="conf-pass">Confirm password </label>
+            <input type="password" name="conf-pass" id="conf-pass" required placeholder="Confirm password">
     
             <div class="checkbox-wrapper">
                 <input type="checkbox" id="persetujuan" name="persetujuan" required>
