@@ -6,21 +6,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .register-card {
     margin-top: 15px;
     background-color: #ffff;
-    width: 400px;
+    width: 450px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.register-card label {
+/* .register-card label {
     margin-bottom: 5px;
     display: block;
-}
+} */
 
 .register-card h1 {
     text-align: center;
@@ -29,7 +31,7 @@ body {
 
 .register-card input {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     padding: 8px;
     border: 1px solid #6b21a8;
