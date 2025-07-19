@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/registerstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <div class="register-card">
         <h1>Register</h1>
         <form action="../controllers/auth/auth_register.php" method="post">
             <?php if (isset($_GET["error"]) && $_GET["error"] === "username_exist")  :?>
-                <p style="color: red; text-align:center;"> Username sudah terpakai</p>
-            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "invalid")  :?>
-                <p style="color: red; text-align:center;"> Pastikan email yang diinputkan valid</p>
+                <div class="alert alert-danger" role="alert">Yahh usernamenya udah dipake</div>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "invalid_email")  :?>
+                <div class="alert alert-danger" role="alert">Masukin email yang bener dong!</div>
             <?php elseif (isset($_GET["error"]) && $_GET["error"] === "insert_failed")  :?>
-                <p style="color: red; text-align:center;">Gagal membuat akun</p>
-            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "already_used")  :?>
-                <p style="color: red; text-align:center;">Email sudah terdaftar</p>
-            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "terlalu_pendek")  :?>
-                <p style="color: red; text-align:center;">Password yang dibuat minimal 8 character</p>
-            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "password_tidak_cocok")  :?>
-                <p style="color: red; text-align:center;">Password yang anda masukkan tidak cocok</p>
+                <div class="alert alert-danger" role="alert">Waduh, gagal bikin akun. Coba lagi nanti ya!!</div>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "email_exist")  :?>
+                <div class="alert alert-danger" role="alert">Lho, udah ada yang pake emailnya nih</div>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "password_too_short")  :?>
+                <div class="alert alert-danger" role="alert">Walawe, kependekan passwordnya</div>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "password_not_match")  :?>
+                <div class="alert alert-danger" role="alert">Masa ngecocokin password aja gabisa</div>
             <?php endif?>
+    
 
-
-            <label for="nama">Nama lengkap </label>
-            <input type="text" name="nama" id="nama" required placeholder="Nama lengkap"> 
-    
-            <label for="email">Email </label>
-            <input type="text" name="email" id="email" placeholder="example@gmail.com" required>
-    
-            <label for="username">Username </label>
-            <input type="text" name="username" id="username" required placeholder="Username">
-    
-            <label for="pass">Password </label>
-            <input type="password" name="pass" id="pass" required placeholder="Password">
             
-            <label for="conf-pass">Confirm password </label>
-            <input type="password" name="conf-pass" id="conf-pass" required placeholder="Confirm password">
-    
+            <input class="form-control mb-3" type="text" name="email" id="email" placeholder="example@gmail.com" required>
+            <input class="form-control mb-3" type="text" name="username" id="username" placeholder="Username" required>
+            <input class="form-control mb-3" type="password" name="pass" id="pass" placeholder="Password" required>
+            <input class="form-control mb-3" type="password" name="conf-pass" id="conf-pass" placeholder="Confirm password" required>
+
             <div class="checkbox-wrapper">
                 <input type="checkbox" id="persetujuan" name="persetujuan" required>
                 <label for="persetujuan">I agree all terms & conditions</label>
