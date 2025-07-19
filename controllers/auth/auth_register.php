@@ -7,14 +7,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $nama = mysqli_real_escape_string($conn, $_POST["nama"]);
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
         $username = mysqli_real_escape_string($conn, $_POST["username"]);
-        $password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+        $password = $_POST["pass"];
+        $passConfirm = $_POST["conf-pass"];
         
-
+        
         // check panjang password users
         if (strlen($_POST["pass"]) < 8) {
             header("Location: ../../pages/register.php?error=terlalu_pendek");
             exit();
         }
+        
+        // check password confirm
+        if ($password !== $passConfirm) {
+            header("Location: ../../pages/register.php?error=password_tidak_cocok");
+            exit();
+        }
+
         
         // check input user email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -37,7 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
         
         //insert data into database
-        $query = "INSERT INTO users VALUES (NULL, '$nama', '$email', '$username', '$password')";
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $query = "INSERT INTO users VALUES (NULL, '$nama', '$email', '$username', '$passwordHash')";
         if (mysqli_query($conn, $query)) {
             header("Location: ../../pages/login.php?register_success=success");
             exit();
