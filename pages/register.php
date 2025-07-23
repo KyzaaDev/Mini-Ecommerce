@@ -24,14 +24,16 @@
                 <div class="alert alert-danger" role="alert">Walawe, kependekan passwordnya</div>
             <?php elseif (isset($_GET["error"]) && $_GET["error"] === "password_not_match")  :?>
                 <div class="alert alert-danger" role="alert">Masa ngecocokin password aja gabisa</div>
+            <?php elseif (isset($_GET["error"]) && $_GET["error"] === "empty_fields")  :?>
+                <div class="alert alert-danger" role="alert">Masa ngecocokin password aja gabisa</div>
             <?php endif?>
     
 
             
             <input class="form-control mb-3" type="text" name="email" id="email" placeholder="example@gmail.com" required>
             <input class="form-control mb-3" type="text" name="username" id="username" placeholder="Username" required>
-            <input class="form-control mb-3" type="password" name="pass" id="pass" placeholder="Password" required>
-            <input class="form-control mb-3" type="password" name="conf-pass" id="conf-pass" placeholder="Confirm password" required>
+            <input class="form-control mb-3" type="password" name="password" id="pass" placeholder="Password" required>
+            <input class="form-control mb-3" type="password" name="password-confirm" id="conf-pass" placeholder="Confirm password" required>
 
             <div class="checkbox-wrapper">
                 <input type="checkbox" id="persetujuan" name="persetujuan" required>
