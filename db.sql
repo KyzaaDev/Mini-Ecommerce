@@ -51,12 +51,11 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nama_lengkap` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +64,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'Dzaky Ra\'uf Nur Fadhillah','kyzaasec@gmail.com','admin','$2y$10$VDotXXwk9uuZmTN2UZpsSugg9X.ClTzAnfHwH1EqpKSfNwg8mlsxa'),(4,'Max Emilian Verstappen','max@dududu.com','ElGerobak','$2y$10$ItbYxwuw2mnvgoioqNCLhueVpxiGagSyK.FdW7sg0.sKQ4UIWvpJ6');
+INSERT INTO `users` VALUES (3,'kyzaasec@gmail.com','admin','$2y$10$VDotXXwk9uuZmTN2UZpsSugg9X.ClTzAnfHwH1EqpKSfNwg8mlsxa'),(4,'max@dududu.com','ElGerobak','$2y$10$ItbYxwuw2mnvgoioqNCLhueVpxiGagSyK.FdW7sg0.sKQ4UIWvpJ6'),(6,'Ollie@bearman.com','Olman','$2y$10$epat0Byi7xPkceSuiQNO/uF.vvujuPiHovCcxlSDZ3JvOLnhWvMCa'),(7,'dzakyraufnurfhadillah@gmail.com','zakyneedmoney','$2y$10$ZBXWZ.t0mXVm1TRIK1CoFODfoMV0WsYgkIR8kkN1vfFZ8wjrzCzmC');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-19  9:32:24
+-- Dump completed on 2025-07-24 19:37:58
