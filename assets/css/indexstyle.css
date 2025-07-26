@@ -1,6 +1,6 @@
 /* TAG STYLE */
 body {
-    background-color: 	#ffff; /* tetap putih bersih */
+    background-color: 	#F7F7F7; /* tetap putih bersih */
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +14,7 @@ header {
     padding: 6px 16px;
     /* border-radius: 10px;
     margin: 10px; */
-    position: relative;
+    /* position: relative; */
 
     position: sticky;
     top: 0;
@@ -59,7 +59,7 @@ button:hover {
 footer {
     background-color: #1f2937; /* abu gelap */
     color: #ffffff;
-    padding: 10px;
+    padding: 25px;
     text-align: center;
 }
 
@@ -97,7 +97,7 @@ h2 {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.4);
     transition: width 0.3s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ h2 {
 }
 
 .card-katalog:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.05) rotate(2deg);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -148,4 +148,15 @@ h2 {
 
 .produk a:hover {
     color: #6b21a8;
+}
+
+/* FOOTER */
+footer p {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+footer p a {
+    color: #6b21a8;
+    text-decoration: none;
 }
