@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         }else {
             // check panjang password users
-            if (strlen($_POST["pass"]) < 8) {
+            if (strlen($_POST["password"]) < 8) {
                 header("Location: ../../pages/register.php?error=password_too_short");  
                 exit();
             }
