@@ -67,6 +67,37 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (3,'kyzaasec@gmail.com','admin','$2y$10$VDotXXwk9uuZmTN2UZpsSugg9X.ClTzAnfHwH1EqpKSfNwg8mlsxa'),(4,'max@dududu.com','ElGerobak','$2y$10$ItbYxwuw2mnvgoioqNCLhueVpxiGagSyK.FdW7sg0.sKQ4UIWvpJ6'),(6,'Ollie@bearman.com','Olman','$2y$10$epat0Byi7xPkceSuiQNO/uF.vvujuPiHovCcxlSDZ3JvOLnhWvMCa'),(7,'dzakyraufnurfhadillah@gmail.com','zakyneedmoney','$2y$10$ZBXWZ.t0mXVm1TRIK1CoFODfoMV0WsYgkIR8kkN1vfFZ8wjrzCzmC');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `ratings`
+--
+
+DROP TABLE IF EXISTS `ratings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ratings` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `rating` int NOT NULL CHECK (`rating` >= 1 AND `rating` <= 5),
+  `review` text,
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_user_product` (`user_id`, `product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `product`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ratings`
+--
+
+LOCK TABLES `ratings` WRITE;
+/*!40000 ALTER TABLE `ratings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ratings` ENABLE KEYS */;
+UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
