@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
     
             // check apakah email sudah terdaftar
-            $checkEmail = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
+            $checkEmail = mysqli_query($conn, "SELECT email FROM users WHERE email = '$email'");
             if(mysqli_num_rows($checkEmail) > 0){
                 header("Location: ../../pages/register.php?error=email_exist");
                 exit();
             }
     
             //check user
-            $checkUser = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
+            $checkUser = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
             if(mysqli_num_rows($checkUser) > 0){
                 header("Location: ../../pages/register.php?error=username_exist");
                 exit();
