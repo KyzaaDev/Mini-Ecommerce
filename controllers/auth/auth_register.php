@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require(__DIR__ . "/../../config/db.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -8,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username = mysqli_real_escape_string($conn, $_POST["username"]);
         $password = $_POST["password"];
         $passConfirm = $_POST["password-confirm"];
-        
 
         if (empty($email) || empty($username) || empty($password) || empty($passConfirm)) {
             header("Location: ../../register.php?error=empty_fields");
@@ -48,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             //insert data into database
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            $query = "INSERT INTO users VALUES (NULL, '$email', '$username', '$passwordHash')";
+            $query = "INSERT INTO users (email, username, password) VALUES ('$email', '$username', '$passwordHash')";
             if (mysqli_query($conn, $query)) {
                 header("Location: ../../pages/login.php?register_success=success");
                 exit();

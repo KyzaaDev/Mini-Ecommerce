@@ -10,9 +10,15 @@ if (isset($_POST["login"])) {
     
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
+        $role = $user["role"];
         if (password_verify($password, $user["password"])) {
-            header("Location: ../../pages/dashboard.php");
-            exit();
+            if ($role == "user") {
+                header("Location: ../../pages/user/dashboard.php");
+                exit();
+            } elseif ($role === "admin") {
+                header("Location: ../../pages/admin/dashboard.php");
+                exit();
+            }
         } else {
             header("Location: ../../pages/login.php?error=wrong");
             exit();
