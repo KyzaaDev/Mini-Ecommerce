@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.42, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.43, for Linux (x86_64)
 --
 -- Host: localhost    Database: mecom
 -- ------------------------------------------------------
--- Server version	8.0.42-0ubuntu0.22.04.1
+-- Server version	8.0.43-0ubuntu0.22.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -54,8 +54,9 @@ CREATE TABLE `users` (
   `email` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `role` varchar(5) DEFAULT 'user',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +65,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'kyzaasec@gmail.com','admin','$2y$10$VDotXXwk9uuZmTN2UZpsSugg9X.ClTzAnfHwH1EqpKSfNwg8mlsxa'),(4,'max@dududu.com','ElGerobak','$2y$10$ItbYxwuw2mnvgoioqNCLhueVpxiGagSyK.FdW7sg0.sKQ4UIWvpJ6'),(6,'Ollie@bearman.com','Olman','$2y$10$epat0Byi7xPkceSuiQNO/uF.vvujuPiHovCcxlSDZ3JvOLnhWvMCa'),(7,'dzakyraufnurfhadillah@gmail.com','zakyneedmoney','$2y$10$ZBXWZ.t0mXVm1TRIK1CoFODfoMV0WsYgkIR8kkN1vfFZ8wjrzCzmC');
+INSERT INTO `users` VALUES (11,'remixzacky26@gmail.com','kyzaaSec','$2y$10$NXkHekxFd4c6vgu1uXWRNuaerlsQ8BX5T7N94gRc2aUB9OjLEPC7e','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-24 19:37:58
+-- Dump completed on 2025-08-18 11:57:12
