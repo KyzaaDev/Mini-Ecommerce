@@ -1,6 +1,6 @@
 <?php 
 require __DIR__ . "../../../controllers/produk.php";
-$products = produkList();
+$products = latestProduct();
 $users = getUser();
 ?>
 

@@ -38,4 +38,24 @@ function getUser() {
 
     return $users;
 }
+
+function latestProduct($limit = 5) {
+    $query = "SELECT * FROM product ORDER BY created_at DESC LIMIT  $limit";
+    global $conn;
+
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+
+    while($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
+function produkDelete($id) {
+    global $conn; // Pastikan $conn tersedia
+    mysqli_query($conn, "DELETE FROM product WHERE id = $id");
+    return mysqli_affected_rows($conn);
+}
+
 ?>
