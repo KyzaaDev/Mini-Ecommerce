@@ -6,7 +6,7 @@ if (isset($_POST["login"])) {
     $username = mysqli_real_escape_string($conn, $_POST["user"]);
     $password = $_POST["pass"];
     
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE BINARY username = '$username'");
     
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);

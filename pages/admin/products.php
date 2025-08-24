@@ -33,15 +33,20 @@ $products = produkList();
                 <h1>CRUD Products Dashboard</h1>
             </section>
 
+            <section class="search-add">
+                <button type="button" class="btn btn-primary"><i class="bi bi-plus-square"></i> Add Product</button>
+            </section>
+
             <section class="data-sec">
                 <table class="table table-striped">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Nama Product</th>
-                            <th scope="col">Stok</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Dibuat pada</th>
+                            <th scope="col">Products Picture</th>
+                            <th scope="col">Products Name</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Created At</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -49,6 +54,9 @@ $products = produkList();
                     <?php foreach ($products as $product) : ?>
                         <tr>
                             <th scope="row"><?= $product["id"] ?></th>
+                            <th scope="row">
+                                <img src="<?= BASE_URL?>assets/images/<?=$product['pic']?>" alt="Gambar ga ketemu" style="height: 70px; width: 80px; object-fit:cover;">
+                            </th>
                             <td><?= $product["nama_product"] ?></td>
                             <td><?= $product["stok"] ?></td>
                             <td>RP <?= number_format($product["harga"], 0, ",", "."); ?></td>

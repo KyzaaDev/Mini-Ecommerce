@@ -2,6 +2,7 @@
 require __DIR__ . "../../../controllers/produk.php";
 $products = latestProduct();
 $users = getUser();
+$totalProducts = produkList();
 ?>
 
 <!DOCTYPE html>
@@ -30,34 +31,34 @@ $users = getUser();
         <main class="content">
 
             <section class="judul">
-                <h1>Selamat Datang, Admin!</h1>
+                <h1>Welcome, Admin!</h1>
             </section>
 
             <section class="stats">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Total Produk</h5>
-                        <p class="card-text fs-5"><?= count($products) ?></p>
+                        <h5 class="card-title">Total Produts</h5>
+                        <p class="card-text fs-5"><?= count($totalProducts) ?></p>
                     </div>
                 </div>
                 <div class="card text-white bg-success mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Total User</h5>
+                        <h5 class="card-title">Total Users</h5>
                         <p class="card-text fs-5"><?= count($users) ?></p>
                     </div>
                 </div>
             </section>
 
             <section class="data-sec">
-                <h3>Data Terbaru!</h3>
+                <h3>Latest Data!</h3>
                 <table class="table table-striped">
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Nama Product</th>
-                            <th scope="col">Stok</th>
-                            <th scope="col">Harga</th>
-                            <th scope="col">Dibuat pada</th>
+                            <th scope="col">Products Name</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Created At</th>
                         </tr>
                     </thead>
                     <tbody>
