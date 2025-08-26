@@ -1,4 +1,6 @@
-<?php error_reporting(E_ALL); ini_set('display_errors', 1); ?>
+<?php 
+require_once "./config/config.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/indexstyle.css">
 </head>
 <body>
-    <?php include("./includes/header.php")?>
+    <?php include(BASE_PATH . "includes/header.php")?>
 
     <!-- main -->
     <h2>Our Popular Products</h2>
@@ -34,6 +36,6 @@
         </div>
     </div>
 
-    <?php include("./includes/footer.php")?>
+    <?php include(BASE_PATH . "includes/footer.php")?>
 </body>
 </html>

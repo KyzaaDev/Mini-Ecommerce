@@ -1,5 +1,5 @@
 <?php 
-require __DIR__ . "../../../controllers/produk.php";
+require __DIR__ . "../../../../controllers/produk.php";
 $products = produkList();
 ?>
 
@@ -9,7 +9,7 @@ $products = produkList();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD PHP MYSQL</title>
-    <link rel="stylesheet" href="../../assets/css/dashboardstyle.css">
+    <link rel="stylesheet" href="../../../assets/css/dashboardstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@ $products = produkList();
 
     <div class="wrapper">
         <!-- SIDEBAR -->
-        <?php include("includes/sidebar.php") ?>
+        <?php include("../includes/sidebar.php") ?>
     
         <!-- MAIN CONTENT -->
         <main class="content">
