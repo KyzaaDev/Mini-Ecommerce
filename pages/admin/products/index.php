@@ -1,6 +1,13 @@
 <?php 
 require __DIR__ . "../../../../controllers/produk.php";
-$products = produkList();
+
+// cek apakah ada request cari
+if (isset($_POST['cari'])) {
+    $keyword = $_POST['keyword'];
+    $products = cari($keyword);
+} else {
+    $products = produkList();
+}
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +42,10 @@ $products = produkList();
 
             <section class="search-add">
                 <button type="button" class="btn btn-primary"><i class="bi bi-plus-square"></i> Add Product</button>
+                <form class="form-inline d-flex" action="" method="post">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="keyword" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" name="cari" type="submit">Search</button>
+                </form>
             </section>
 
             <section class="data-sec">

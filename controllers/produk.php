@@ -58,4 +58,18 @@ function produkDelete($id) {
     return mysqli_affected_rows($conn);
 }
 
+function cari($keyword) {
+    $query = "SELECT * FROM product WHERE nama_product LIKE '%$keyword%'";
+    global $conn;
+
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+
+    while($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+    
+}
+
 ?>
