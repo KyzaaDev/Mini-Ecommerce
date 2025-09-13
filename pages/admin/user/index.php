@@ -4,9 +4,9 @@ require __DIR__ . "../../../../controllers/produk.php";
 // cek apakah ada request cari
 if (isset($_POST['cari'])) {
     $keyword = $_POST['keyword'];
-    $products = cari($keyword);
+    $users = cariUsers($keyword);
 } else {
-    $products = produkList();
+    $users = getUser();
 }
 ?>
 
@@ -53,27 +53,23 @@ if (isset($_POST['cari'])) {
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Products Picture</th>
-                            <th scope="col">Products Name</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Created At</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Created at</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($products as $product) : ?>
+                    <?php foreach ($users as $user) : ?>
                         <tr>
-                            <th scope="row"><?= $product["id"] ?></th>
-                            <th scope="row">
-                                <img src="<?= BASE_URL?>assets/images/<?=$product['pic']?>" alt="Gambar ga ketemu" style="height: 70px; width: 80px; object-fit:cover;">
-                            </th>
-                            <td><?= $product["nama_product"] ?></td>
-                            <td><?= $product["stok"] ?></td>
-                            <td>RP <?= number_format($product["harga"], 0, ",", "."); ?></td>
-                            <td><?= $product["created_at"] ?></td>
+                            <th scope="row"><?= $user["id"] ?></th>
+                            <td><?= $user["email"] ?></td>
+                            <td><?= $user["username"] ?></td>
+                            <td><?= $user["role"] ?></td>
+                            <td><?= $user["created_at"] ?></td>
                             <td>
-                                <a type="button" class="btn btn-danger" href="../../../controllers/CRUD/hapus.php?id_product=<?= $product['id']?>" onclick="return confirm('Yakin ingin menghapus produk?')" >Delete <i class="bi bi-trash-fill"></i></a>
+                                <a type="button" class="btn btn-danger" href="../../../controllers/CRUD/hapus.php?id_user=<?= $user['id']?>" onclick="return confirm('Yakin ingin menghapus user?')" >Delete <i class="bi bi-trash-fill"></i></a>
                                 <a type="button" class="btn btn-warning">Edit <i class="bi bi-pencil-square"></i></a>
                             </td>
                         </tr>
