@@ -1,8 +1,15 @@
 <?php 
+session_start();
 require __DIR__ . "../../../controllers/produk.php";
 $products = latestProduct();
 $users = getUser();
 $totalProducts = produkList();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: ../login.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +38,7 @@ $totalProducts = produkList();
         <main class="content">
 
             <section class="judul">
-                <h1>Welcome, Admin!</h1>
+                <h1>Welcome, <?= $_SESSION["user"] ?>!</h1>
             </section>
 
             <section class="stats">

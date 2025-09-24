@@ -1,6 +1,12 @@
 <?php 
+session_start();
 require __DIR__ . "../../../../controllers/produk.php";
 
+
+if (!isset($_SESSION["login"])) {
+    header("Location: ../../login.php");
+    exit();
+}
 // cek apakah ada request cari
 if (isset($_POST['cari'])) {
     $keyword = $_POST['keyword'];

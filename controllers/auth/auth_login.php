@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 require(__DIR__ . "/../../config/db.php");
 
 if (isset($_POST["login"])) {
@@ -16,6 +17,8 @@ if (isset($_POST["login"])) {
                 header("Location: ../../pages/user/dashboard.php");
                 exit();
             } elseif ($role === "admin") {
+                $_SESSION["login"] = true;
+                $_SESSION["user"] = $user["username"];
                 header("Location: ../../pages/admin/dashboard.php");
                 exit();
             }
