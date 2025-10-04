@@ -19,9 +19,16 @@
                 <div class="alert alert-danger" role="alert">Bikin akun dulu bang baru login</div>
             <?php endif; ?>
 
-            
-            <input class="form-control mb-3" type="text" name="user" id="username" required placeholder="Username">
-            <input class="form-control mb-3" type="password" name="pass" id="password" required placeholder="Password">
+            <li>
+                <input class="form-control mb-3" type="text" name="user" id="username" required placeholder="Username">
+            </li>
+            <li>
+                <input class="form-control mb-3" type="password" name="pass" id="password" required placeholder="Password">
+            </li>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="remember" id="remember">
+                <label class="form-check-label" for="remember" >Remember me</label>
+            </div>
 
             <button type="submit" name="login">Login</button>
         </form>

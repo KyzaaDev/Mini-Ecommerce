@@ -17,11 +17,22 @@ if (isset($_POST["login"])) {
                 header("Location: ../../pages/user/dashboard.php");
                 exit();
             } elseif ($role === "admin") {
-                $_SESSION["login"] = true;
-                $_SESSION["user"] = $user["username"];
-                header("Location: ../../pages/admin/dashboard.php");
-                exit();
+
+
+            //cek remember me
+            
+            
+            $_SESSION["login"] = true;
+            $_SESSION["user"] = $user["username"];
+
+            if (isset($_POST['remember'])) {
+                setcookie("key", hash('sha256', $user["username"]), time() + 3600, "/");
+                setcookie("id", $user["id"], time() + 3600, "/");
             }
+
+            header("Location: ../../pages/admin/dashboard.php");
+            exit();
+        }
         } else {
             header("Location: ../../pages/login.php?error=wrong");
             exit();

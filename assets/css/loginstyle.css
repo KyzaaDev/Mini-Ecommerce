@@ -50,3 +50,15 @@ body {
 .login a {
     text-decoration: none;
 }
+
+li {
+    list-style-type: none;
+}
+
+.login input[type="checkbox"] {
+    width: auto;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}

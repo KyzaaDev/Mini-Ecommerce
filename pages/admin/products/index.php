@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require __DIR__ . "../../../../controllers/auth/auth_check.php";
 require __DIR__ . "../../../../controllers/produk.php";
 
 
