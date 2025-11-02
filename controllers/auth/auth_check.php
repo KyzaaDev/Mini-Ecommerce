@@ -8,18 +8,21 @@ if (isset($_SESSION["login"])) {
 }
 
 // kalau belum ada session, cek cookie
-if (isset($_COOKIE["key"]) && isset($_COOKIE["id"])) {
-    $id = $_COOKIE["id"];
-    $key = $_COOKIE["key"];
+if (isset($_COOKIE["whoami"])) {
+    $token = $_COOKIE["whoami"];
+    $tokenHash = hash("sha256", $token);
 
-    $result = mysqli_query($conn, "SELECT username FROM users WHERE id = $id");
-    if ($row = mysqli_fetch_assoc($result)) {
-        if ($key === hash('sha256', $row["username"])) {
+    $result = mysqli_query($conn, "SELECT username, cookies, cookie_expiry FROM users WHERE cookies = '$tokenHash'");
+
+    if (strtotime($result["cookie_expiry"] > time())) {
             // bikin session baru
             $_SESSION["login"] = true;
             $_SESSION["user"] = $row["username"];
             return;
-        }
+    } else {
+            // token udah expired -> hapus cookie dan reset di DB
+            setcookie('whoami', '', time() - 3600, '/');
+            mysqli_query($conn, "UPDATE users SET cookies=NULL, cookie_expiry=NULL WHERE username='{$result['username']}'");
     }
 }
 
